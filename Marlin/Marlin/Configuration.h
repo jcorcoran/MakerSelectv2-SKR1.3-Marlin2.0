@@ -503,10 +503,16 @@
     // #define DEFAULT_Ki   1.08
     // #define DEFAULT_Kd 114.00
 
-    // Micro Swiss all metal hotend on Ramps 1.4 from Marlin 1.9.x
-    #define DEFAULT_Kp 28.86
-    #define DEFAULT_Ki 1.79
-    #define DEFAULT_Kd 116.44
+    // Micro Swiss all metal hotend on Ramps 1.4 from Marlin 1.x
+    // #define DEFAULT_Kp 28.86
+    // #define DEFAULT_Ki  1.79
+    // #define DEFAULT_Kd 116.44
+
+    // Micro Swiss all metal hotend on stock SKR 1.3 FET w/ fan on
+    // M303 E0 C8 S210
+    #define DEFAULT_Kp 22.65
+    #define DEFAULT_Ki 1.37
+    #define DEFAULT_Kd 93.81
   #endif
 #endif // PIDTEMP
 
@@ -550,10 +556,15 @@
   // #define DEFAULT_bedKd 305.4
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
-  //Maker Select v2 - PID AutoTune 12/27/20 (from Marlin 1.9.x) w/ stock bed driven by FDP6035 MOSFET
-  #define DEFAULT_bedKp 327.58
-  #define DEFAULT_bedKi 64.50
-  #define DEFAULT_bedKd 415.94
+  // Maker Select v2 - PID AutoTune 12/27/20 (from Marlin 1.9.x) w/ stock bed driven by FDP6035 MOSFET
+  // #define DEFAULT_bedKp 327.58
+  // #define DEFAULT_bedKi 64.50
+  // #define DEFAULT_bedKd 415.94
+  // Maker Select v2 - PID AutoTune 01/01/21 w/ stock bed driven by ymp200n080 MOSFET board
+  // M303 E-1 C8 S70
+  #define DEFAULT_bedKp 116.19
+  #define DEFAULT_bedKi 21.48
+  #define DEFAULT_bedKd 419.11
 #endif // PIDTEMPBED
 
 #if EITHER(PIDTEMP, PIDTEMPBED)
@@ -692,7 +703,7 @@
 #define Z_DRIVER_TYPE  DRV8825
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE DRV8825
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 #define E0_DRIVER_TYPE DRV8825
@@ -752,7 +763,7 @@
  */
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { (80.0 * 2.0), (80.0 * 2.0), 400.0, (96.25 * 2.0) } // 1/32 microsteps on X, Y, E (stock extruder filament gear)
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { (80.0 * 2.0), (80.0 * 2.0), 400.0, (86.55575 * 2.0) } // 1/32 microsteps on X, Y, E (stock extruder filament gear)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { (80.0 * 2.0), (80.0 * 2.0), (400.0 * 2.0), (86.55575 * 2.0) } // 1/32 microsteps on X, Y, Z, E (larger extruder filament gear)
 
 
 /**

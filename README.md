@@ -1,7 +1,7 @@
 # MakerSelectv2-SKR1.3-Marlin2.0
 
 ## Hardware configuration
-This project is the Marlin firmware configuration for a Monoprice Maker Select v2.1 (https://www.monoprice.com/product?p_id=13860)
+This project is the Marlin firmware configuration for a [Monoprice Maker Select v2.1](https://www.monoprice.com/product?p_id=13860)
 3D printer with after market customizations.
 
 The stock configuration of this printer had voltage on male header pins for the extruder fan. While performing maintenance,

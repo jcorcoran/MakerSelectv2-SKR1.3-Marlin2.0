@@ -763,7 +763,8 @@
  */
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 4000, 500 }
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   { (80.0 * 2.0), (80.0 * 2.0), 400.0, (96.25 * 2.0) } // 1/32 microsteps on X, Y, E (stock extruder filament gear)
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { (80.0 * 2.0), (80.0 * 2.0), (400.0 * 2.0), (86.55575 * 2.0) } // 1/32 microsteps on X, Y, Z, E (larger extruder filament gear)
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { (5.0 * 256.0), (5.0 * 256.0), (25.0 * 32.0), (5.409734375 * 32.0) } // 1/256 microsteps on X & Y
+                                                                                                            // 1/32 microsteps on Z & E (larger extruder filament gear)
 
 
 /**

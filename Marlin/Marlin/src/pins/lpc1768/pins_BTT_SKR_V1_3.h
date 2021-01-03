@@ -283,8 +283,8 @@
      *               5V | 1 2 | GND                     GND | 1 2 | 5V
      *    (BEEPER) 1.23 | 3 4 |                    (BEEPER) | 3 4 | RESET
      *   (BTN_ENC) 1.21 | 5 6   1.20 (LCD_D4)     (BTN_ENC) | 5 6   (LCD_D4)
-     *   (BTN_EN1) 1.19 | 7 8 | 1.18 (LCD_EN)     (BTN_EN1) | 7 8 | (LCD_EN)
-     *   (BTN_EN2) 0.28 | 9 10| 1.30 (LCD_RS)     (BTN_EN2) | 9 10| (LCD_RS)
+     *   (BTN_EN2) 1.19 | 7 8 | 1.18 (LCD_EN)     (BTN_EN2) | 7 8 | (LCD_EN)
+     *   (BTN_EN1) 0.28 | 9 10| 1.30 (LCD_RS)     (BTN_EN1) | 9 10| (LCD_RS)
      *                   -----                               -----
      *                    EXP1                                     LCD
      */
@@ -292,9 +292,9 @@
     //      BEEPER                  EXPA1_03_PIN  // Defined in pins_BTT_SKR_common.h
     #define BTN_ENC                 EXPA1_05_PIN
     #define LCD_PINS_D4             EXPA1_06_PIN
-    #define BTN_EN1                 EXPA1_07_PIN
+    #define BTN_EN1                 EXPA1_09_PIN
     #define LCD_PINS_ENABLE         EXPA1_08_PIN
-    #define BTN_EN2                 EXPA1_09_PIN
+    #define BTN_EN2                 EXPA1_07_PIN
     #define LCD_PINS_RS             EXPA1_10_PIN
 
     #define LCD_SDSS                EXPA2_07_PIN  // (16) J3-7 & AUX-4

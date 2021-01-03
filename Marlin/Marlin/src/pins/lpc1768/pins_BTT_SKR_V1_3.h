@@ -275,14 +275,27 @@
 
   #else                                           // !CR10_STOCKDISPLAY
 
-    #define LCD_PINS_RS             EXPA1_07_PIN
+    /**
+     * Remap EXP1 for a single cable connection to the stock Maker Select v2
+     * (Duplicator i3) LCD pinout. Note the 5V and GND connection on the LCD
+     * Are swapped. Un-crimp and swap these two pins on one end of the IDC cable.
+     *                   _____                               _____
+     *               5V | 1 2 | GND                     GND | 1 2 | 5V
+     *    (BEEPER) 1.23 | 3 4 |                    (BEEPER) | 3 4 | RESET
+     *   (BTN_ENC) 1.21 | 5 6   1.20 (LCD_D4)     (BTN_ENC) | 5 6   (LCD_D4)
+     *   (BTN_EN1) 1.19 | 7 8 | 1.18 (LCD_EN)     (BTN_EN1) | 7 8 | (LCD_EN)
+     *   (BTN_EN2) 0.28 | 9 10| 1.30 (LCD_RS)     (BTN_EN2) | 9 10| (LCD_RS)
+     *                   -----                               -----
+     *                    EXP1                                     LCD
+     */
 
-    #define BTN_EN1                 EXPA2_08_PIN  // (31) J3-2 & AUX-4
-    #define BTN_EN2                 EXPA2_06_PIN  // (33) J3-4 & AUX-4
-    #define BTN_ENC                 EXPA1_09_PIN  // (58) open-drain
-
-    #define LCD_PINS_ENABLE         EXPA1_08_PIN
+    //      BEEPER                  EXPA1_03_PIN  // Defined in pins_BTT_SKR_common.h
+    #define BTN_ENC                 EXPA1_05_PIN
     #define LCD_PINS_D4             EXPA1_06_PIN
+    #define BTN_EN1                 EXPA1_07_PIN
+    #define LCD_PINS_ENABLE         EXPA1_08_PIN
+    #define BTN_EN2                 EXPA1_09_PIN
+    #define LCD_PINS_RS             EXPA1_10_PIN
 
     #define LCD_SDSS                EXPA2_07_PIN  // (16) J3-7 & AUX-4
     #define SD_DETECT_PIN           EXPA2_04_PIN  // (49) (NOT 5V tolerant)
@@ -349,9 +362,9 @@
       #endif
 
       #if ENABLED(ULTIPANEL)
-        #define LCD_PINS_D5         EXPA1_05_PIN
-        #define LCD_PINS_D6         EXPA1_04_PIN
-        #define LCD_PINS_D7         EXPA1_03_PIN
+        // #define LCD_PINS_D5         EXPA1_05_PIN
+        // #define LCD_PINS_D6         EXPA1_04_PIN
+        // #define LCD_PINS_D7         EXPA1_03_PIN
       #endif
 
     #endif // !FYSETC_MINI_12864
